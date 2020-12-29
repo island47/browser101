@@ -3,7 +3,45 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>browser101</title>
+		<title>Window Size</title>
+		<style>
+			.win__container {
+				display: inline-block;
+				padding: 16px;
+				margin: 16px;
+				background-color: rgb(241, 212, 212);
+				font-size: 24px;
+			}
+		</style>
 	</head>
-	<body></body>
+	<body>
+		<div class="win__container">
+			<div class="win__screen"></div>
+			<div class="win__outer"></div>
+			<div class="win__inner"></div>
+			<div class="win__doc"></div>
+		</div>
+		<script>
+			const screen = document.querySelector('.win__screen');
+			const outer = document.querySelector('.win__outer');
+			const inner = document.querySelector('.win__inner');
+			const doc = document.querySelector('.win__doc');
+
+			function upDateTag() {
+				screen.textContent = `window.screen:${window.screen.width}, ${window.screen.height}`;
+				outer.textContent = `window.outer: ${window.outerWidth}, ${window.outerHeight}`;
+				inner.textContent = `window.inner: ${window.innerWidth}, ${window.innerHeight}`;
+				doc.textContent = `documentElement.clientWidthHeight: ${document.documentElement.clientWidth},${document.documentElement.clientHeight}`;
+			}
+
+			function init() {
+				window.addEventListener('resize', () => {
+					upDateTag();
+				});
+			}
+
+			upDateTag();
+			init();
+		</script>
+	</body>
 </html>
