@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				background-color: rgb(31, 27, 27);
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<h3 class="coord"></h3>
+		<script>
+			const coord = document.querySelector('.coord');
+
+			const onMouseMove = e => {
+				coord.innerHTML = `X:${e.clientX}, Y:${e.clientY}`;
+			};
+
+			document.addEventListener('mousemove', onMouseMove);
+		</script>
+	</body>
+</html>
