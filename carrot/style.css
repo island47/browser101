@@ -58,6 +58,8 @@ body {
 	margin-top: 8px;
 	border-radius: 16px;
 	visibility: hidden;
+	user-select: none;
+	cursor: auto;
 }
 
 .game__score {
@@ -72,6 +74,8 @@ body {
 	margin-top: 8px;
 	line-height: 100%;
 	visibility: hidden;
+	user-select: none;
+	cursor: auto;
 }
 
 .game__field {
@@ -111,4 +115,14 @@ body {
 .pop-up__message {
 	display: block;
 	font-size: 38px;
+}
+
+.carrot,
+.bug {
+	transition: transform 100ms ease-in;
+}
+
+.carrot:hover,
+.bug:hover {
+	transform: scale(1.1);
 }
